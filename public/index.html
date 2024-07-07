@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+    <header>
+        <a href="#" class="new">Nouvelle note</a>
+    </header>
+    <main>
+        <ul id="notes"></ul>
+    </main>
+    <footer>
+        <a href="#" class="new">Nouvelle note</a>
+    </footer>
+    <template id="tpl_notes">
+        <li data-noteid="">
+            <form method="post" class="noteform">
+                <fieldset>
+                    <legend>
+                        <input type="text" class="title" />
+                    </legend>
+                    <header>
+                        <menu>
+                            <li>
+                                <input type="submit" class="save" value="💾" />
+                            </li>
+                            <li>
+                                <input type="submit" class="tag" value="🏷️" />
+                            </li>
+                            <li>
+                                <input type="submit" class="delete" value="❌" />
+                            </li>
+                        </menu>
+                    </header>
+                    <article>
+                        <textarea class="content"></textarea>
+                    </article>
+                    <footer>
+                        Créée le
+                        <span class="dateCreated"></span>
+                        et mise à jour le
+                        <span class="dateUpdated"></span>
+                    </footer>
+                </fieldset>
+            </form>
+        </li>
+    </template>
+</body>
+</html>
