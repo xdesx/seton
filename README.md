@@ -54,11 +54,13 @@ Nous ne gérerons pas l'authentification.
 **Il est interdit de modifier le fichier index.html.**
 
 __Consignes obligatoires__
+
 - un style doit être appliqué si un tag est effectif
 - un style doit être appliqué pour indiquer des changements non-sauvegardés sur une note
 - on ne doit pas voir les bullets des éléments de listes
 
 __Consignes à charge__
+
 Vous pouvez appliquer les différents styles CSS que vous souhaitez - l'originalité et le travail déployé seront pris en compte dans la notation.
 
 ### Javascript
@@ -121,6 +123,7 @@ function isTagged(id) {
 ```
 
 Certaines signatures de fonction sont également indiquées, dans le même objectif.
+
 *RAPPEL : on ne peut typer, en Javascript, des arguments ou des retours, les types indiqués dans les signatures ici ne sont que des aides pour votre compréhension*
 
 ```js
