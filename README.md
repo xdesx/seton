@@ -11,38 +11,38 @@ Ou "notes" à l'envers.
 
 ## Utilisation
 
-Tous les fichiers à développer sont dans /public/
-Le fichier app.js est le back-end.
-Le fichier package.json est la liste des packages nécessaires pour le fonctionnement.
-Le dossier node_modules et le fichier package-lock.json sont des éléments techniques qui peuvent être omis et sont recréés automatiquement via `npm install` au besoin.
+Tous les fichiers à développer sont dans `/public/`
+Le fichier `app.js` est le back-end.
+Le fichier `package.json` est la liste des packages nécessaires pour le fonctionnement.
+Le dossier `node_modules` et le fichier `package-lock.json` sont des éléments techniques qui peuvent être omis et sont recréés automatiquement via `npm install` au besoin.
 
 ## Documentation API
 
-GET /api/
+`GET /api/`
 Obtient la liste des notes.
 
-GET /api/:id
-Obtient la note :id
+`GET /api/:id`
+Obtient la note `:id`
 
-PUT /api/
+`PUT /api/`
 Crée une nouvelle note
 Paramètres :
-- title (optionnel) : titre de la note
-- content (optionnel) : contenu de la note
+- `title` (optionnel) : titre de la note
+- `content` (optionnel) : contenu de la note
 
-PATCH /api/:id
-Modifie la note :id
+`PATCH /api/:id`
+Modifie la note `:id`
 Paramètres :
-- title (optionnel)
-- content (optionnel)
+- `title` (optionnel)
+- `content` (optionnel)
 
-DELETE /api/:id
-Supprime la note :id
+`DELETE /api/:id`
+Supprime la note `:id`
 
-POST /api/:id
-Tagge la note :id
+`POST /api/:id`
+Tagge la note `:id`
 Paramètres :
-- tag (optionnel) : type de tag, si négligé, null est utilisé
+- `tag` (optionnel) : type de tag, si négligé, null est utilisé
 
 ## Consignes
 
@@ -140,4 +140,31 @@ isFlaggedAsUnsaved(id): boolean
 
 Vous pouvez, en plus de ces diverses fonctions, créer autant de fonctions et variables que nécessaire.
 
+## Base de données
 
+**ATTENTION** dans cette partie, aucune modification du fichier `app.js` n'est demandée.
+Pour chaque élément est demandé un fichier SQL de migration (du schéma et des données).
+
+### Gestion des boards
+
+Ajouter un concept de board : une board possède un nom, et rassemble des notes. Une note peut - ou non - être dans une board (mais pas plusieurs).
+
+### Gestion des étiquettes
+
+Le concept d'étiquettes (tags) est actuellement limité. Il faut l'étendre :
+- une note peut posséder plusieurs étiquettes
+- une note peut aussi ne posséder aucune étiquette
+- on doit pouvoir choisir parmi des étiquettes existantes
+- les étiquettes existantes avant la migration doivent être portées
+
+### Gestion des users
+
+Ajouter la gestion des utilisateurs (login unique, email, mot de passe chiffré).
+Un compte utilisateur a plusieurs statut potentiels : en attente, actif, rgpd.
+Les comptes en statut "RGPD" ont été purgées de leur données personnelles.
+Une note est forcément rattachée à un utilisateur, de même qu'une board et une étiquette.
+
+### Gestion des listes
+
+Ajouter un nouveau type de note : les listes.
+Ce sont des notes classiques, mais au lieu de contenir un contenu textuel, elles contiennent une liste d'éléments, qui peuvent être "cochés" ou non.
