@@ -1,0 +1,106 @@
+body, h1, h2 {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header, footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 2rem;
+    text-align: center;
+}
+
+a.new {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+main {
+    padding: 1rem;
+}
+
+ul {
+    list-style-type: none; /* del points */
+    padding: 1rem;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 1rem 1rem;
+}
+
+li {
+    background-color: #fff;
+    border: 0.0625rem solid #000000;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 0.3125rem;
+}
+
+.noteform {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Virer les ligner */
+.noteform fieldset {
+    border: none;
+    padding: 0;
+}
+
+.noteform legend {
+    width: 95%;
+}
+
+.noteform .title, .noteform .content {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 0.0625rem solid #ddd;
+    border-radius: 0.3125rem;
+}
+
+.noteform .content {
+    height: 6.25rem;
+    resize: vertical;
+}
+
+.noteform menu {
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.noteform input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 0.3125rem 0.625rem;
+    border-radius: 0.1875rem;
+}
+
+.tagged {
+    background-color: #ffffcc;
+}
+
+
+.unsaved {
+    background-color: red !important; /* Fixed with important because unsaved > tag */
+}
+
+[data-tag="important"] {
+    background-color: #ffffcc;  
+}
+

@@ -1,0 +1,55 @@
+@startuml
+entity notes {
+  * rowid: INTEGER [PK]
+  --
+  dateCreated: DATETIME
+  dateUpdated: DATETIME
+  title: TEXT
+  content: TEXT
+  board_id: INTEGER [FK]
+  user_id: INTEGER [FK]
+  type: TEXT
+}
+
+entity boards {
+  * id: INTEGER [PK]
+  --
+  name: TEXT
+  user_id: INTEGER [FK]
+}
+
+entity users {
+  * id: INTEGER [PK]
+  --
+  username: TEXT
+  email: TEXT
+  password: TEXT
+  status: TEXT
+}
+
+entity tags {
+  * id: INTEGER [PK]
+  --
+  name: TEXT
+}
+
+entity note_tags {
+  * note_id: INTEGER [PK]
+  * tag_id: INTEGER [PK]
+}
+
+entity list_items {
+  * id: INTEGER [PK]
+  --
+  note_id: INTEGER [FK]
+  content: TEXT
+  checked: BOOLEAN
+}
+
+notes }|--|| boards : "board_id"
+notes }|--|| users : "user_id"
+boards }|--|| users : "user_id"
+note_tags }|--|| notes : "note_id"
+note_tags }|--|| tags : "tag_id"
+list_items }|--|| notes : "note_id"
+@enduml
